@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Feedback Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+    <div class="theme-toggle-wrapper">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i> </button>
+    </div>
+
+    <div class="container">
+        <h2>We Value Your Feedback!</h2>
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" name="productName" placeholder="e.g., Wireless Earbuds" required>
+                <span class="error-message" id="productNameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="userEmail">Your Email:</label>
+                <input type="email" id="userEmail" name="userEmail" placeholder="your.email@example.com" required>
+                <span class="error-message" id="userEmailError"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Product Rating:</label>
+                <div class="rating" id="productRating">
+                    <i class="far fa-star star" data-value="1"></i>
+                    <i class="far fa-star star" data-value="2"></i>
+                    <i class="far fa-star star" data-value="3"></i>
+                    <i class="far fa-star star" data-value="4"></i>
+                    <i class="far fa-star star" data-value="5"></i>
+                </div>
+                <input type="hidden" id="selectedRating" name="selectedRating" value="0">
+                <span class="error-message" id="ratingError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="feedbackComments">Comments:</label>
+                <textarea id="feedbackComments" name="feedbackComments" rows="5" placeholder="Tell us what you think about the product..."></textarea>
+                <span class="error-message" id="feedbackCommentsError"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Would you recommend this product?</label>
+                <div class="radio-group">
+                    <div>
+                        <input type="radio" id="recommendYes" name="recommend" value="Yes" required>
+                        <label for="recommendYes">Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="recommendNo" name="recommend" value="No">
+                        <label for="recommendNo">No</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="recommendMaybe" name="recommend" value="Maybe">
+                        <label for="recommendMaybe">Maybe</label>
+                    </div>
+                </div>
+                <span class="error-message" id="recommendError"></span>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <div>
+                    <input type="checkbox" id="updatesOptIn" name="updatesOptIn">
+                    <label for="updatesOptIn">Sign me up for product updates!</label>
+                </div>
+            </div>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+
+    <div id="submissionSummary">
+        <h3>Previous Submissions</h3>
+        <p id="noSubmissionsMessage">No submissions yet. Be the first to leave feedback!</p>
+        <div id="submissionList">
+            </div>
+    </div>
+
+    <script src="feedback.js"></script>
+</body>
+</html>
